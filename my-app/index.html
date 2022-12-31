@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" 
+         rel = "stylesheet" />
+      <script type = "text/javascript" 
+         src = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+      <script type = "text/javascript" 
+         src = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/packages/charts/classic/charts.js"></script>
+      <link href = "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/packages/charts/classic/classic/resources/charts-all.css" 
+         rel = "stylesheet" />
+      
+      <script type = "text/javascript">
+         Ext.onReady(function() {
+            Ext.create('Ext.chart.CartesianChart', {
+               renderTo: document.body,
+               width: 600,
+               height: 200,
+               
+               store: {
+                  fields: ['name', 'g1', 'g2'],
+                  data: [
+                     {"name": "time-0", "g1": 36.4, "g2": 32.93},
+                     {"name": "time-1", "g1": 26.78, "g2": 27.12},
+                     {"name": "time-2", "g1": 26.58, "g2": 34.40},
+                     {"name": "time-3", "g1": 34.64, "g2": 26.73},
+                     {"name": "time-4", "g1": 33.08, "g2": 26.43}
+                  ]
+               },
+               legend: {
+                  docked: 'bottom'
+               },
+
+               //define x and y axis.
+               axes: [{
+                  type: 'numeric',
+                  position: 'left'
+               }, {
+                  type: 'category',
+                  visibleRange: [0, 1],
+                  position: 'bottom'
+               }],
+
+               //define the actual series
+               series: [{
+                  type: 'line',
+                  xField: 'name',
+                  yField: 'g1',
+                  title: '�ū�1'
+               }, {
+                  type: 'line',
+                  xField: 'name',
+                  yField: 'g2',
+                  title: '�ū�2'
+               }]
+            });
+         });
+      </script>
+   </head>
+   
+   <body>
+   </body>
+</html>
